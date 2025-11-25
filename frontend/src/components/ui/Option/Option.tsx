@@ -2,12 +2,6 @@ import React from 'react'
 import styles from './Option.module.css'
 import { Checkbox } from '../Checkbox/Checkbox'
 
-interface CheckboxProps {
-  onChange: (selected: boolean) => void
-  checked?: boolean
-  disabled?: boolean
-}
-
 interface OptionProps {
   title: string
   onChange: (selected: boolean) => void

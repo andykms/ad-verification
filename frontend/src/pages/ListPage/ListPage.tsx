@@ -122,7 +122,7 @@ export const ListPage = (props: ListPageProps) => {
     onSetStatus(choosenStatuses)
     onSetCategory(choosenCategory!)
 
-    let validMinPrice =
+    const validMinPrice =
       choosenMinPrice && choosenMinPrice >= minPossiblePrice
         ? choosenMinPrice
         : minPossiblePrice

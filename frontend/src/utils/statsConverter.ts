@@ -1,13 +1,11 @@
 import type {
   ApiStatsSummary,
-  ApiActivityData,
   ApiDecisionsData,
   ApiCategoriesData,
   ApiModerator,
 } from '../types/api/stats'
 import type {
   StatsSummary,
-  ActivityData,
   DecisionsData,
   CategoriesData,
   Moderator,

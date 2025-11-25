@@ -54,7 +54,7 @@ export const PieChart: React.FC<PieChartProps> = ({ data, title }) => {
 
   let currentAngle = 0
 
-  const calculateSegmentPath = (value: number, index: number) => {
+  const calculateSegmentPath = (value: number) => {
     const angle = (value / 100) * 360
     const startAngle = currentAngle
     const endAngle = currentAngle + angle
@@ -73,24 +73,7 @@ export const PieChart: React.FC<PieChartProps> = ({ data, title }) => {
     return `M ${center} ${center} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x2} ${y2} Z`
   }
 
-  const calculateTooltipPosition = (value: number, index: number) => {
-    const angle = (value / 100) * 360
-    const segmentStartAngle = currentAngle
-    const midAngle = segmentStartAngle + angle / 2 - 90
-    const midAngleRad = midAngle * (Math.PI / 180)
-
-    const tooltipDistance = radius * 0.7
-    const x = center + tooltipDistance * Math.cos(midAngleRad)
-    const y = center + tooltipDistance * Math.sin(midAngleRad)
-
-    return { x, y }
-  }
-
-  const handleSegmentMouseEnter = (
-    value: number,
-    index: number,
-    event: React.MouseEvent
-  ) => {
+  const handleSegmentMouseEnter = (value: number, index: number) => {
     setHoveredSegment(index)
 
     let tempAngle = 0
@@ -133,16 +116,14 @@ export const PieChart: React.FC<PieChartProps> = ({ data, title }) => {
         className={styles.chart}
       >
         {normalizedData.map((item, index) => {
-          const path = calculateSegmentPath(item.value, index)
+          const path = calculateSegmentPath(item.value)
           return (
             <path
               key={index}
               d={path}
               fill={getColor(index)}
               className={styles.segment}
-              onMouseEnter={(e) =>
-                handleSegmentMouseEnter(item.value, index, e)
-              }
+              onMouseEnter={() => handleSegmentMouseEnter(item.value, index)}
               onMouseLeave={() => setHoveredSegment(null)}
               style={{
                 opacity:

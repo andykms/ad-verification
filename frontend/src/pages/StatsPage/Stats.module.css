@@ -25,6 +25,14 @@
   padding: 0 10px;
 }
 
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
 .statsFilters {
   display: flex;
   gap: 10px;

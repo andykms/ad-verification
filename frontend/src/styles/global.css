@@ -180,6 +180,11 @@ button {
 a {
   text-decoration: none;
   color: inherit;
+  color: var(--text-color);
+}
+
+span {
+  color: var(--text-color);
 }
 
 #root {

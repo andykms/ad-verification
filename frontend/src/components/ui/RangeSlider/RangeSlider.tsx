@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styles from './RangeSlider.module.css'
 
 interface RangeSliderProps {
@@ -21,7 +21,7 @@ export const RangeSlider: React.FC<RangeSliderProps> = ({
   initialMax,
 }) => {
   const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let value = Number(e.target.value)
+    const value = Number(e.target.value)
     if (isNaN(value)) {
       return
     }
@@ -29,7 +29,7 @@ export const RangeSlider: React.FC<RangeSliderProps> = ({
   }
 
   const handleMaxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let value = Number(e.target.value)
+    const value = Number(e.target.value)
     if (isNaN(value)) {
       return
     }

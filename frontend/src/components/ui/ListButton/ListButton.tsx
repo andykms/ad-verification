@@ -1,6 +1,5 @@
 import style from './ListButton.module.css'
 import { Button } from '../../ui/Button/Button'
-import { SettingsIcon } from '../../ui/SettingsIcon/SettingsIcon'
 
 export const ListButton = () => {
   return (

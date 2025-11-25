@@ -14,7 +14,6 @@ import { useAppSelector } from '../store'
 import { getAds } from '../features/ads/ads.slice'
 import { useAppDispatch } from '../store'
 import { fetchAds } from '../features/ads/ads.thunk'
-import { useNavigate } from 'react-router-dom'
 
 export type TFilters = {
   page: number
@@ -26,11 +25,7 @@ export type TFilters = {
   sortBy: TSortType
 }
 
-export const useFilters = (state?: {
-  redirectTo: number
-  nextPage: number
-  currAdId: number
-}) => {
+export const useFilters = () => {
   const pageFilters = useAppSelector(selectPage)
   const statusesFilters = useAppSelector(selectStatuses)
   const categoriesFilters = useAppSelector(selectCategories)
@@ -39,7 +34,6 @@ export const useFilters = (state?: {
   const searchFilters = useAppSelector(selectSearch)
   const sortByFilters = useAppSelector(selectSortBy)
 
-  const navigate = useNavigate()
   const ads = useAppSelector(getAds)
   const dispatch = useAppDispatch()
 
@@ -89,35 +83,7 @@ export const useFilters = (state?: {
     searchFilters,
     sortByFilters,
   ])
-  /*
-  useEffect(() => {
-    return () => {
-      if (state?.redirectTo === -1 && state.nextPage === pageFilters && state.currAdId && state.currAdId !== ads[ads.length - 1].id) {
-        console.log(
-          "redirectTo",
-          `/item/${ads[ads.length - 1].id}`,
-          state.redirectTo,
-          "nextPage",
-          state.nextPage 
-        );
-        navigate(`/item/${ads[ads.length - 1].id}`, {
-          state: { search: location.search, page: state.nextPage },
-        });
-      } else if (state?.redirectTo === 1 && state.nextPage === pageFilters && state.currAdId && state.currAdId !== ads[0].id) {
-        console.log(
-          "redirectTo",
-          `/item/${ads[0].id}`,
-          state.redirectTo,
-          "nextPage",
-          state.nextPage
-        );
-        navigate(`/item/${ads[0].id}`, {
-          state: { search: location.search, page: state.nextPage },
-        });
-      }
-    };
-  }, [ads]);
-*/
+
   const filters: TFilters = {
     page: pageFilters,
     statuses: statusesFilters,

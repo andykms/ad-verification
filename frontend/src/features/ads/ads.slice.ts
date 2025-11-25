@@ -73,7 +73,7 @@ export const adsSlice = createSlice({
         state.totalItems = action.payload.pagination.totalItems
         state.totalPages = action.payload.pagination.totalPages
       })
-      .addCase(fetchAds.rejected, (state, _) => {
+      .addCase(fetchAds.rejected, (state) => {
         state.loading = false
         state.error = 'Ошибка при загрузке объявлений'
         state.ads = []
@@ -89,7 +89,7 @@ export const adsSlice = createSlice({
         state.currentAd = action.payload
         state.errorGetById = null
       })
-      .addCase(fetchAdById.rejected, (state, _) => {
+      .addCase(fetchAdById.rejected, (state) => {
         state.loading = false
         state.errorGetById = 'Ошибка при загрузке объявления'
         state.currentAd = null
@@ -108,7 +108,7 @@ export const adsSlice = createSlice({
         state.error = null
         state.loading = false
       })
-      .addCase(approveAd.rejected, (state, _) => {
+      .addCase(approveAd.rejected, (state) => {
         ;((state.error = 'Ошибка при подтверждении объявления'),
           (state.bulkOperationLoading = false),
           (state.loading = false))
@@ -131,7 +131,7 @@ export const adsSlice = createSlice({
         state.error = null
         state.loading = false
       })
-      .addCase(rejectAd.rejected, (state, _) => {
+      .addCase(rejectAd.rejected, (state) => {
         state.error = 'Ошибка при отклонении объявления'
         state.bulkOperationLoading = false
         state.loading = false
@@ -155,7 +155,7 @@ export const adsSlice = createSlice({
         state.error = null
         state.loading = false
       })
-      .addCase(requestChangesAd.rejected, (state, _) => {
+      .addCase(requestChangesAd.rejected, (state) => {
         state.error = 'Ошибка при запросе изменений'
         state.bulkOperationLoading = false
         state.loading = false
@@ -177,7 +177,7 @@ export const adsSlice = createSlice({
         state.error = null
         state.loading = false
       })
-      .addCase(bulkApproveAds.rejected, (state, _) => {
+      .addCase(bulkApproveAds.rejected, (state) => {
         state.error = 'Ошибка при подтверждении объявлений'
         state.bulkOperationLoading = false
         state.loading = false
@@ -200,7 +200,7 @@ export const adsSlice = createSlice({
         state.error = null
         state.loading = false
       })
-      .addCase(bulkRejectAds.rejected, (state, _) => {
+      .addCase(bulkRejectAds.rejected, (state) => {
         state.error = 'Ошибка при отклонении объявлений'
         state.bulkOperationLoading = false
         state.loading = false

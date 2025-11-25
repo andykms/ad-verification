@@ -1,4 +1,3 @@
-import { Children } from 'react'
 import { Button, type IButtonProps } from '../Button/Button'
 
 export interface ArrowButtonProps

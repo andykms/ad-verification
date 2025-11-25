@@ -33,6 +33,7 @@ export const SingleSelectDropdown: React.FC<SingleSelectDropdownProps> = ({
   }
 
   const handleClear = (e: React.MouseEvent) => {
+    e.stopPropagation()
     setSelected(null)
     onChange(null)
     setIsOpen(false)

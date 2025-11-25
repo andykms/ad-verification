@@ -25,7 +25,6 @@ import {
   getCategories,
   getPossibleMaxPrice,
   getPossibleMinPrice,
-  setCurrAd,
 } from '../features/ads/ads.slice'
 import type { ApiAdStatus } from '../types/api/ads'
 import { useNavigate } from 'react-router-dom'
@@ -75,7 +74,7 @@ export const AdsPresenter = () => {
     return () => {}
   }, [])
 
-  const { ads, filters } = useFilters(location.state)
+  const { ads, filters } = useFilters()
 
   const handleSetStatus = (status: string[]) => {
     dispatch(setStatuses(status))

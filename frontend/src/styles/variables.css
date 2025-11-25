@@ -12,7 +12,19 @@
   --layout-primary: rgb(103, 211, 81);
   --layout-secondary: rgb(220, 220, 220);
   --danger: rgb(191, 123, 123);
-  --warning: var(--layout);
+  --warning: rgb(255, 244, 199);
   --warning-hover: rgb(255, 217, 114);
   --text-color-primary: rgb(255, 205, 3);
+}
+
+.dark {
+  --theme: #2c2c2c;
+  --theme-hover: #181818;
+  --text-color: #fff;
+  --layout: rgb(110, 96, 39);
+  --warning: rgb(110, 96, 39);
+  --warning-hover: rgb(151, 124, 52);
+  --tertiary: rgba(255, 255, 255, 0.9);
+  --tertiary-hover: rgba(255, 255, 255, 0.6);
+  --layout-secondary: rgb(67, 67, 67);
 }

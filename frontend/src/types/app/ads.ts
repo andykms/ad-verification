@@ -1,9 +1,4 @@
-import type {
-  ApiAdvertisement,
-  ApiPagination,
-  ApiSeller,
-  ApiModerationHistory,
-} from '../api/ads'
+import type { ApiAdvertisement, ApiPagination } from '../api/ads'
 
 export interface Advertisement extends ApiAdvertisement {}
 export interface Pagination extends ApiPagination {}

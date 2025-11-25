@@ -2,8 +2,6 @@
   background-color: var(--layout);
   padding: 20px;
   border-radius: 12px;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 2px 8px rgb(188, 188, 188);
   width: 100%;
   max-height: 400px;
   overflow-y: scroll;
@@ -50,7 +48,6 @@
   border-radius: 8px;
   padding: 16px;
   border: 1px solid #e8e8e8;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
 .actionHeader {

@@ -14,18 +14,19 @@
 .input {
   flex: 1;
   padding: 8px 12px;
-  border: 2px solid var(--theme);
+  border: 2px solid var(--theme-hover);
   border-radius: 20px;
   font-size: 14px;
   width: 50px;
+  background-color: var(--theme);
+  color: var(--text-color);
 }
 
 .input:focus {
   outline: none;
   border-color: var(--theme);
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
 .input::placeholder {
-  color: #999;
+  color: var(--text-color);
 }
