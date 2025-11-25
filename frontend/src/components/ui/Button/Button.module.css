@@ -1,0 +1,86 @@
+.button {
+  block-size: 40px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+.button:disabled {
+  background-color: var(--disabled);
+  cursor: not-allowed;
+}
+
+.button:disabled:hover {
+  background-color: var(--disabled);
+}
+
+.primary {
+  background-color: var(--primary);
+}
+
+.primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.secondary {
+  background-color: var(--secondary);
+}
+
+.tertiary {
+  background-color: var(--tertiary);
+}
+
+.danger {
+  background-color: var(--danger);
+}
+
+.warning {
+  background-color: var(--warning);
+}
+
+.warning:hover {
+  background-color: var(--warning-hover);
+}
+
+.transparent {
+  background-color: inherit;
+}
+
+.arrow {
+  background-color: var(--tertiary);
+  border-radius: 100px;
+  padding: 0 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.arrow:hover {
+  background-color: var(--tertiary-hover);
+}
+
+.theme {
+  background-color: var(--theme);
+  border-radius: 5px;
+  padding: 20px 20px;
+  transition: background-color 0.3s ease-in-out;
+  border: 2px solid var(--theme-hover);
+}
+
+.theme:hover {
+  background-color: var(--theme-hover);
+}
+
+.theme-2 {
+  background-color: var(--theme);
+  border-radius: 100px;
+  border: 2px solid var(--theme-hover);
+  transition: none;
+}
+
+.primary-2 {
+  background-color: var(--primary);
+  border-radius: 100px;
+  border: 1px solid var(--primary-hover);
+  transition: none;
+}

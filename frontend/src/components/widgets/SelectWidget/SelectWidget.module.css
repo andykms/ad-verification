@@ -1,0 +1,29 @@
+.selectedArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  padding: 10px 20px;
+  box-shadow: 0px 5px 4px 0px rgba(0, 27, 25, 0.2);
+  background-color: var(--layout);
+}
+
+.choosenSelectedArea {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 50%;
+  background-color: var(--layout-secondary);
+}
+
+.operations {
+  justify-self: flex-end;
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .choosenSelectedArea {
+    width: 90%;
+  }
+}

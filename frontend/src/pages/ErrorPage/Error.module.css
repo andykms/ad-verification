@@ -1,0 +1,32 @@
+.notFoundPage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.title {
+  margin-top: 100px;
+  font-size: 96px;
+  color: var(--danger);
+}
+
+.subtitle {
+  margin-top: 20px;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 200px;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    gap: 50px;
+  }
+}

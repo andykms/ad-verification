@@ -1,0 +1,73 @@
+.statsPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 0;
+}
+
+.statsPageHeader {
+  background-color: var(--layout);
+  box-shadow: 0px 5px 4px 0px rgba(0, 27, 25, 0.2);
+  padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 12px;
+}
+
+.nav {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.statsFilters {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  align-items: center;
+}
+
+.choosePeriod {
+  position: absolute;
+  top: 30px;
+  left: -10px;
+}
+
+.statsFacts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.statsPieChart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 600px;
+  background-color: var(--theme-hover);
+  flex-shrink: 0;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .statsPageHeader {
+    flex-direction: column;
+  }
+
+  .statsFilters {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    align-items: center;
+  }
+
+  .statsPieChart {
+    inline-size: 360px;
+  }
+}

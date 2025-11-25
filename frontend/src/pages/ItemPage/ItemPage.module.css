@@ -1,0 +1,137 @@
+.productPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 150px;
+}
+
+.productInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.sellerInfo {
+  border-radius: 10px;
+  padding: 20px;
+  background-color: var(--layout);
+  inline-size: 360px;
+}
+
+.sellerTitle,
+.productTitle {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.sellerList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  list-style: none;
+}
+
+.productAbout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px 100px;
+  background-color: var(--layout-secondary);
+  inline-size: 100%;
+}
+
+.descriptionTitle {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.descriptionText {
+  font-size: 14px;
+}
+
+.actions {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 0 20px;
+  background-color: var(--theme-hover);
+  inline-size: 500px;
+}
+
+.productActions {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  margin-top: 20px;
+  inline-size: 100%;
+}
+
+.productNav {
+  display: flex;
+  justify-content: space-between;
+  inline-size: 100%;
+}
+
+.productNavButtons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .productInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 20px;
+    inline-size: 100%;
+  }
+
+  .sellerInfo {
+    inline-size: 100%;
+  }
+
+  .productAbout {
+    padding: 20px 20px;
+  }
+
+  .actions {
+    inline-size: 360px;
+    padding: 0 10px;
+  }
+
+  .productActions {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .productNavButtons {
+    display: flex;
+    gap: 5px;
+  }
+
+  .productNav {
+    display: flex;
+    font-size: 12px;
+  }
+
+  .productNav svg {
+    width: 15px;
+    height: 15px;
+  }
+}

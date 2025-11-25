@@ -1,0 +1,182 @@
+.card {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  background: var(--theme);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.info {
+  display: flex;
+  height: 180px;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.imageSection {
+  position: relative;
+  width: 180px;
+  flex-shrink: 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageSection :global(.small) {
+  width: 130px !important;
+  height: 250px !important;
+}
+
+.imageSection :global(.small img) {
+  border-radius: 0;
+}
+
+.priority {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+}
+
+.priority-normal {
+  background-color: #6b7280;
+}
+
+.priority-urgent {
+  background-color: #ef4444;
+}
+
+.content {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+  color: #1f2937;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #059669;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.category {
+  font-size: 14px;
+  color: #6b7280;
+  background-color: #f3f4f6;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.date {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 8px;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-moderation {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-approved {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-rejected {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.footer :global(.button) {
+  width: auto !important;
+  height: 36px !important;
+  padding: 0 16px !important;
+  font-size: 14px !important;
+  min-width: 100px;
+}
+
+@media (max-width: 767px) {
+  .card {
+    width: 360px;
+    height: 250px;
+  }
+
+  .imageSection {
+    width: 130px;
+  }
+
+  .imageSection :global(.small) {
+    width: 130px !important;
+    height: 250px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 400px;
+    height: 250px;
+  }
+
+  .imageSection {
+    width: 180px;
+  }
+
+  .imageSection :global(.small) {
+    width: 130px !important;
+    height: 250px !important;
+  }
+}

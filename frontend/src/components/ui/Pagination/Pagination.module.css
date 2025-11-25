@@ -1,0 +1,86 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 0;
+}
+
+.arrow,
+.page {
+  background-color: inherit;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.totalItems {
+  font-size: 14px;
+}
+
+.arrow:hover:not(.disabled),
+.page:hover:not(.active) {
+  background-color: var(--secondary);
+  border-color: #d0d0d0;
+}
+
+.arrow.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.arrow.disabled:hover {
+  background-color: inherit;
+  border-color: var(--theme-hover);
+}
+
+.page.active {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.page.active:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.ellipsis {
+  padding: 8px 4px;
+  color: #6b7280;
+  font-size: 14px;
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    gap: 4px;
+  }
+
+  .arrow,
+  .page {
+    padding: 6px 8px;
+    min-width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+
+  .ellipsis {
+    padding: 6px 2px;
+    min-width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+}

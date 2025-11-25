@@ -1,0 +1,70 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0;
+}
+
+.nav {
+  margin-bottom: 50px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 0 10px;
+  animation: low 1s ease-in-out;
+}
+
+.welcome {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  animation: title 1s ease-in-out;
+  margin-block-end: 50px;
+}
+
+.moderatorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: info 0.9s ease-in-out;
+}
+
+.infoCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  align-items: center;
+}
+
+@keyframes low {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes title {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes info {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,28 @@
+.reject {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+}
+
+.title {
+  align-self: flex-start;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.comment {
+  font-size: 14px;
+  block-size: 200px;
+  resize: none;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid var(--theme-hover);
+  inline-size: 100%;
+}
+.comment:focus {
+  border: 1px solid var(--theme-hover);
+  outline: none;
+}

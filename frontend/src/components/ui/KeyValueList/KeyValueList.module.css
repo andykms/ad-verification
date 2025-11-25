@@ -1,0 +1,71 @@
+.keyValueList {
+  background-color: var(--theme);
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-color);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 4px 0;
+}
+
+.key {
+  font-weight: 500;
+  color: var(--text-color);
+  background-color: var(--theme);
+  padding-right: 8px;
+  z-index: 1;
+}
+
+.value {
+  color: var(--text-color);
+  background-color: var(--theme);
+  padding-left: 8px;
+  z-index: 1;
+}
+
+.dots {
+  flex: 1;
+  border-bottom: 2px dotted #d0d0d0;
+  margin: 0 8px;
+  height: 1px;
+  min-width: 20px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .keyValueList {
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .key,
+  .value {
+    font-size: 14px;
+  }
+
+  .dots {
+    margin: 0 4px;
+  }
+}

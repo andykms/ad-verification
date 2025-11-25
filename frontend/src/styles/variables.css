@@ -1,0 +1,18 @@
+:root {
+  --primary: rgb(128, 192, 128);
+  --secondary: rgb(114, 114, 114);
+  --tertiary: rgba(0, 0, 0, 0.676);
+  --tertiary-hover: rgba(0, 0, 0, 0.8);
+  --primary-hover: rgba(1, 199, 1, 0.555);
+  --theme: #fff;
+  --theme-hover: #eee;
+  --text-color: #000;
+  --disabled: #ccc;
+  --layout: rgb(255, 244, 199);
+  --layout-primary: rgb(103, 211, 81);
+  --layout-secondary: rgb(220, 220, 220);
+  --danger: rgb(191, 123, 123);
+  --warning: var(--layout);
+  --warning-hover: rgb(255, 217, 114);
+  --text-color-primary: rgb(255, 205, 3);
+}

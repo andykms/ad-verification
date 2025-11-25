@@ -1,0 +1,29 @@
+.card {
+  background-color: var(--theme);
+  color: var(--text-color);
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 120px;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.value {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Десктопная версия */
+@media (min-width: 768px) {
+  .card {
+    width: 360px;
+  }
+}
