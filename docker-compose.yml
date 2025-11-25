@@ -1,0 +1,53 @@
+version: "3.9"
+services:
+  backend:
+    image: andykms/advert-backend:node20-alpine
+    ports:
+      - "3001:3001"
+    networks:
+      - app-network
+    restart: on-failure
+    environment:
+      PORT: 3001
+    container_name: backend
+
+  frontend:
+    image: andykms/advert-frontend:node20-alpine
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_API_BASE_URL: "http://localhost/api/v1"
+    volumes:
+      - frontend_data:/usr/src/app/dist
+    networks:
+      - app-network
+    restart: on-failure
+    container_name: frontend
+
+  nginx:
+    image: andykms/advert-nginx
+    networks:
+      - internet
+      - app-network
+    restart: on-failure
+    depends_on:
+      - backend
+      - frontend
+    ports:
+      - "80:80"
+    volumes:
+      - frontend_data:/usr/share/nginx/html:ro 
+    container_name: nginx
+
+networks:    
+  app-network:
+    internal: true
+    driver: bridge
+    
+  internet: 
+    driver: bridge
+    
+volumes:
+  frontend_data:
+
+    

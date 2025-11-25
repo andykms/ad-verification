@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react'
 import styles from './SearchInput.module.css'
 
-
 interface SearchInputProps {
   onEnter: (value: string) => void
   initialValue?: string

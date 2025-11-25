@@ -108,7 +108,7 @@ export const ItemPresenter = () => {
   }
 
   const handleEnter = (search: string) => {
-    navigate(`/list?search=${search}`);
+    navigate(`/list?search=${search}`)
   }
 
   const { blockNextNav, blockPrevNav } = useBlockNavigation(
