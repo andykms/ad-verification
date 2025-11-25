@@ -31,6 +31,7 @@ export interface ListPageProps {
   sortByOptions: { title: string; key: string }[]
   initialSortBy: string | null
   initialCategory: number | null
+  initialSearch?: string
   statuses: { title: string; key: string }[]
   selectedStatuses: string[] | null
   categories: Category[]
@@ -73,6 +74,7 @@ export const ListPage = (props: ListPageProps) => {
     onBulkApprove,
     onBulkReject,
     onSetReset,
+    initialSearch,
   } = props
 
   const [openRejectReason, setOpenRejectReason] = useState<boolean>(false)
@@ -185,7 +187,10 @@ export const ListPage = (props: ListPageProps) => {
       <main className={style.listPage}>
         <header className={style.header}>
           <div className={style.searchArea}>
-            <SearchInput onEnter={onSetSearch}></SearchInput>
+            <SearchInput
+              onEnter={onSetSearch}
+              initialValue={initialSearch}
+            ></SearchInput>
           </div>
           <nav className={style.nav}>
             <NavLink to="/stats">

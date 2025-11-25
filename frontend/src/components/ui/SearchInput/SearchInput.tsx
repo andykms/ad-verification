@@ -1,16 +1,19 @@
 import React, { useState, useRef } from 'react'
 import styles from './SearchInput.module.css'
 
+
 interface SearchInputProps {
   onEnter: (value: string) => void
+  initialValue?: string
   placeholder?: string
 }
 
 export const SearchInput: React.FC<SearchInputProps> = ({
   onEnter,
   placeholder = 'Поиск...',
+  initialValue,
 }) => {
-  const [value, setValue] = useState('')
+  const [value, setValue] = useState(initialValue || '')
   const inputRef = useRef<HTMLInputElement>(null)
 
   const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {

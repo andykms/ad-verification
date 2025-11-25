@@ -6,6 +6,7 @@ import { ActionHistory } from '../../components/ui/ActionHistory/ActionHistory'
 import { Button } from '../../components/ui/Button/Button'
 import { ModalReject } from '../../components/widgets/ModalReject/ModalReject'
 import { ArrowButton } from '../../components/ui/ArrowButton/ArrowButton'
+import { SearchInput } from '../../components/ui/SearchInput/SearchInput'
 
 export interface ProductHistory {
   moderator: string
@@ -44,10 +45,11 @@ export interface ProductPageProps {
   onPrevPage: () => void
   onApprove: () => void
   onReject: (reason: string, comment: string) => void
-  onRequestChanges: () => void
+  onRequestChanges: (reason: string, comment: string) => void
   onBack: () => void
   blockNextNav: boolean
   blockPrevNav: boolean
+  onSearch: (query: string) => void
 }
 
 export const ProductPage = (props: ProductPageProps) => {
@@ -61,9 +63,12 @@ export const ProductPage = (props: ProductPageProps) => {
     onBack,
     blockNextNav,
     blockPrevNav,
+    onSearch,
   } = props
 
   const [openedRejectReason, setOpenedReason] = useState<boolean>(false)
+
+  const [openedChanges, setOpenedChanges] = useState<boolean>(false)
 
   const handleReject = () => {
     setOpenedReason(true)
@@ -74,18 +79,26 @@ export const ProductPage = (props: ProductPageProps) => {
     onReject(reason, comment)
   }
 
+  const handleChanges = () => {
+    setOpenedChanges(true)
+  }
+
+  const handleSubmitChanges = (reason: string, comment: string) => {
+    setOpenedChanges(false)
+    onRequestChanges(reason, comment)
+  }
+
   const onKeyDown = (e: KeyboardEvent) => {
-    console.log(e.key)
     if (e.key === 'ArrowLeft') {
       onPrevPage()
     }
     if (e.key === 'ArrowRight') {
       onNextPage()
     }
-    if (e.code === 'keyA') {
+    if (e.key.toLowerCase() === 'a') {
       onApprove()
     }
-    if (e.code === 'keyD') {
+    if (e.key.toLowerCase() === 'd') {
       handleReject()
     }
   }
@@ -100,6 +113,7 @@ export const ProductPage = (props: ProductPageProps) => {
   return (
     <>
       <section className={style.productPage}>
+        <SearchInput onEnter={onSearch}></SearchInput>
         <div className={style.productInfo}>
           <ImageCarousel type="large" images={product.images} />
           <ActionHistory actions={product.moderationHistory} />
@@ -132,7 +146,7 @@ export const ProductPage = (props: ProductPageProps) => {
             <Button onClick={handleReject} type="danger">
               Отклонить
             </Button>
-            <Button onClick={onRequestChanges} type="warning">
+            <Button onClick={handleChanges} type="warning">
               Доработка
             </Button>
           </div>
@@ -165,6 +179,12 @@ export const ProductPage = (props: ProductPageProps) => {
         <ModalReject
           onSubmit={handleSubmitReject}
           onClose={() => setOpenedReason(false)}
+        ></ModalReject>
+      )}
+      {openedChanges && (
+        <ModalReject
+          onSubmit={handleSubmitChanges}
+          onClose={() => setOpenedChanges(false)}
         ></ModalReject>
       )}
     </>

@@ -7,7 +7,11 @@ import { fetchAdById } from '../features/ads/ads.thunk'
 import { ProductPage } from '../pages/ItemPage/ItemPage'
 import { type ApiAdStatus } from '../types/api/ads'
 import { converterDate } from '../utils/converterDate'
-import { approveAd, rejectAd } from '../features/ads/ads.thunk'
+import {
+  approveAd,
+  rejectAd,
+  requestChangesAd,
+} from '../features/ads/ads.thunk'
 import type { TRejectReasons } from '../types/app/ads'
 import { Loader } from '../components/ui/Loader/Loader'
 import { ErrorPage } from '../pages/ErrorPage/ErrorPage'
@@ -59,6 +63,15 @@ export const ItemPresenter = () => {
     )
   }
 
+  const handleRequestChanges = (reason: string, comment: string) => {
+    dispatch(
+      requestChangesAd({
+        adId: Number(id),
+        data: { reason: reason as TRejectReasons, comment },
+      })
+    )
+  }
+
   const handleBack = () => {
     navigate(`/list?${search}`)
   }
@@ -94,6 +107,10 @@ export const ItemPresenter = () => {
     })
   }
 
+  const handleEnter = (search: string) => {
+    navigate(`/list?search=${search}`);
+  }
+
   const { blockNextNav, blockPrevNav } = useBlockNavigation(
     ads,
     ad,
@@ -121,7 +138,8 @@ export const ItemPresenter = () => {
         </div>
       ) : (
         <ProductPage
-          onRequestChanges={() => {}}
+          onSearch={handleEnter}
+          onRequestChanges={handleRequestChanges}
           onApprove={handleApprove}
           onReject={handleReject}
           product={{

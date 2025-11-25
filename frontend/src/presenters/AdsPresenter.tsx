@@ -125,6 +125,7 @@ export const AdsPresenter = () => {
 
   return (
     <ListPage
+      initialSearch={filters.search}
       onSetStatus={handleSetStatus}
       onSetCategory={handleSetCategory}
       onSetCostRange={handleSetCostRange}
